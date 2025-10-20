@@ -1,0 +1,19 @@
+Diseño Lógico
+
+Paso a tablas:
+- Entrada (CodEnt, Estado, PrecioEnt, CodSec)
+- Asistente (Dni, Email, NombreC)
+- Seccion (CodSec, Tipo, AforoSec, MgSec, CodUb)
+- Ubicacion ( CodUb, Nombre, Direccion, Ciudad, PrecioAlq,Caract)
+- Evento (CodEven, Nombre, Fecha, Hora, CodAct)
+- Actividad (CodAct, Nombre, Tipo)
+- Artista (CodArt, NombreC, Biblio)
+- Telefono (Dni, CodPais, numero)
+
+Relaciones:
+- Participan (CodAct, CodArt, Cache)
+- Reserva (CodSec, CodEven, FecRes)
+- Compran (CodEnt, Dni, Valoran, FecComp)
+
+Las entidades fuertes (Ubicación, Sección, Evento, Actividad, Artista, Asistente, Entrada) se transformaron directamente en tablas con su respectiva clave primaria y atributos simples. Cada una conserva los dominios y restricciones de integridad definidos en el modelo conceptual.
+El atributo Teléfono de la entidad Asistente fue identificado como atributo multivalorado, ya que un asistente puede disponer de uno o varios números de contacto. De acuerdo con las reglas de transformación del modelo entidad/relación a tablas, los atributos multivalorados se modelan como una nueva tabla independiente, donde cada valor del atributo genera una fila asociada a la clave de la entidad origen.
